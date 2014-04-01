@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  item: MyString
+  url: MyString
+  user: MyString
+  thumbnail: MyString
+  sales: MyString
+  rating: MyString
+  rating_decimal: MyString
+  cost: MyString
+  uploaded_on: 2014-04-01
+  last_update: 2014-04-01
+  tags: MyString
+  category: MyString
+  live_preview_url: MyString
+
+two:
+  number: MyString
+  item: MyString
+  url: MyString
+  user: MyString
+  thumbnail: MyString
+  sales: MyString
+  rating: MyString
+  rating_decimal: MyString
+  cost: MyString
+  uploaded_on: 2014-04-01
+  last_update: 2014-04-01
+  tags: MyString
+  category: MyString
+  live_preview_url: MyString
