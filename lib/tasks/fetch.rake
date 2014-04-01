@@ -48,5 +48,6 @@ def request(path)
 end
 
 def delete
-  ActiveRecord::Base.connection.execute("TRUNCATE items")
+  # Rake::Task['db:drop:all'].invoke
+  # Rake::Task['db:migrate'].invoke
 end
