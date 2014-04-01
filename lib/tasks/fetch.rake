@@ -1,45 +1,52 @@
-# require 'net/http'
-# require 'multi_json'
+require 'net/http'
+require 'multi_json'
 
-# desc "Seed the database"
-# task :seed => :environment do
-#   # fetch
-#   # delete
-#   # populate
-#   search
-# end
+desc "Seed the database"
+task :seed => :environment do
+  delete
+  fetch
+end
 
-# def search
-#   response = request 'http://marketplace.envato.com/api/v3/popular:themeforest.json'
-#   results = MultiJson.load response
+def fetch
+  response = request 'http://marketplace.envato.com/api/v3/popular:themeforest.json'
+  results = MultiJson.load response
+  populate results['popular']['items_last_week']
+end
 
-#   items = results['popular']['items_last_week']
+def populate(items)
+  items.each do |item|
+    insert item
+  end
+end
 
-#   items.each do |request|
-#     puts request['id']
-#     # "id":"2833226",
-#     # "item":"Avada | Responsive Multi-Purpose Theme",
-#     # "url":"http://themeforest.net/item/avada-responsive-multipurpose-theme/2833226",
-#     # "user":"ThemeFusion",
-#     # "thumbnail":"https://d2mdw063ttlqtq.cloudfront.net/files/86270249/Thumbnail.jpg",
-#     # "sales":"1122",
-#     # "rating":"5",
-#     # "rating_decimal":"4.68",
-#     # "cost":"55.00",
-#     # "uploaded_on":"Thu Aug 16 01:28:46 +1000 2012",
-#     # "last_update":"Thu Mar 27 05:27:45 +1100 2014",
-#     # "tags":"business, clean, corporate, creative, ecommerce, localization, modern, multipurpose, one page, portfolio, responsive, retina, seo, woocommerce, wordpress",
-#     # "category":"wordpress/corporate",
-#     # "live_preview_url":"https://d2mdw063ttlqtq.cloudfront.net/files/86270251/screenshots/00_preview.__large_preview.jpg"},
-#   end
-# end
+def insert(item)
+  ActiveRecord::Base.connection.execute("INSERT INTO items (number, item, url, user, thumbnail, sales, rating, rating_decimal, cost, uploaded_on, last_update, tags, category, live_preview_url) VALUES ('" \
+    + item['id'].to_s + "','" \
+    + item['item'].to_s + "','" \
+    + item['url'].to_s + "','" \
+    + item['user'].to_s + "','" \
+    + item['thumbnail'].to_s + "','" \
+    + item['sales'].to_s + "','" \
+    + item['rating'].to_s + "','" \
+    + item['rating_decimal'].to_s + "','" \
+    + item['cost'].to_s + "','" \
+    + item['uploaded_on'].to_s + "','" \
+    + item['last_update'].to_s + "','" \
+    + item['tags'].to_s + "','" \
+    + item['category'].to_s + "','" \
+    + item['live_preview_url'].to_s + "')"
+  )
+end
 
+def request(path)
+  url = URI.parse(path)
+  req = Net::HTTP::Get.new(url.path)
+  res = Net::HTTP.start(url.host, url.port) {|http|
+    http.request(req)
+  }
+  res.body
+end
 
-# def request(path)
-#   url = URI.parse(path)
-#   req = Net::HTTP::Get.new(url.path)
-#   res = Net::HTTP.start(url.host, url.port) {|http|
-#     http.request(req)
-#   }
-#   res.body
-# end
+def delete
+  ActiveRecord::Base.connection.execute("TRUNCATE items")
+end
