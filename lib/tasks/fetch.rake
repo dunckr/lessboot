@@ -1,7 +1,7 @@
 require 'net/http'
 require 'multi_json'
 
-desc "Seed the database"
+desc "seed the database"
 task :seed => :environment do
   delete
   fetch

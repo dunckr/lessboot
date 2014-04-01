@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @item.number %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @item.item %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @item.url %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @item.user %>
+</p>
+
+<p>
+  <strong>Thumbnail:</strong>
+  <%= @item.thumbnail %>
+</p>
+
+<p>
+  <strong>Sales:</strong>
+  <%= @item.sales %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @item.rating %>
+</p>
+
+<p>
+  <strong>Rating decimal:</strong>
+  <%= @item.rating_decimal %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @item.cost %>
+</p>
+
+<p>
+  <strong>Uploaded on:</strong>
+  <%= @item.uploaded_on %>
+</p>
+
+<p>
+  <strong>Last update:</strong>
+  <%= @item.last_update %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @item.tags %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category %>
+</p>
+
+<p>
+  <strong>Live preview url:</strong>
+  <%= @item.live_preview_url %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
