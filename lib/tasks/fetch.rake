@@ -2,7 +2,7 @@ require 'net/http'
 require 'multi_json'
 
 desc "seed the database"
-task :seed => :environment do
+task :fetch => :environment do
   delete
   fetch
 end
@@ -48,6 +48,5 @@ def request(path)
 end
 
 def delete
-  # Rake::Task['db:drop:all'].invoke
-  # Rake::Task['db:migrate'].invoke
+  ActiveRecord::Base.connection.execute('delete * from items')
 end
