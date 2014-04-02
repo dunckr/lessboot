@@ -53,6 +53,8 @@ end
 
 gem 'rails_12factor', group: :production
 
-gem 'masonry-rails'
+gem 'will_paginate', '~> 3.0'
+
+gem 'masonry-rails', '~> 0.2.1'
 
 ruby "2.1.1"

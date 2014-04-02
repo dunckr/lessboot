@@ -3,11 +3,7 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    # @items = Item.all
-    # @items = Item.order(:created_at).page(params[:page])
-    # @items = Item.paginate :page=>page, :order=>order
-    # @posts = Post.paginate :page=>page, :order=>order
-    @items = Item.order(:created_at).page(params[:page])
+    @items = Item.paginate(:page => params[:page])
   end
 
   # GET /items/1

@@ -1,18 +1,4 @@
-<div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
-
-  <% @items.each do |item| %>
-    <div class="box">
-      <p>
-        <a href=<%= item.category %>>
-          <img src=<%= item.live_preview_url %> />
-        </a>
-      </p>
-    </div>
-  <% end %>
-
-</div>
-
-<!-- <h1>Listing items</h1>
+<h1>Listing items</h1>
 
 <table>
   <thead>
@@ -62,5 +48,5 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
- -->
+<%= will_paginate @items %>
+
