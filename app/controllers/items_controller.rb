@@ -3,7 +3,11 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    @items = Item.all
+    # @items = Item.all
+    # @items = Item.order(:created_at).page(params[:page])
+    # @items = Item.paginate :page=>page, :order=>order
+    # @posts = Post.paginate :page=>page, :order=>order
+    @items = Item.order(:created_at).page(params[:page])
   end
 
   # GET /items/1
@@ -21,3 +25,4 @@ class ItemsController < ApplicationController
       params.require(:item).permit(:number, :item, :url, :user, :thumbnail, :sales, :rating, :rating_decimal, :cost, :uploaded_on, :last_update, :tags, :category, :live_preview_url)
     end
 end
+
