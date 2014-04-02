@@ -57,4 +57,7 @@ gem 'will_paginate', '~> 3.0'
 
 gem 'masonry-rails', '~> 0.2.1'
 
+gem 'sass-rails', '>= 3.2'
+gem 'bootstrap-sass', '~> 3.1.1'
+
 ruby "2.1.1"

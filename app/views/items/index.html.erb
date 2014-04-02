@@ -1,52 +1,17 @@
-<h1>Listing items</h1>
+<h1>header</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Item</th>
-      <th>Url</th>
-      <th>User</th>
-      <th>Thumbnail</th>
-      <th>Sales</th>
-      <th>Rating</th>
-      <th>Rating decimal</th>
-      <th>Cost</th>
-      <th>Uploaded on</th>
-      <th>Last update</th>
-      <th>Tags</th>
-      <th>Category</th>
-      <th>Live preview url</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
 
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.number %></td>
-        <td><%= item.item %></td>
-        <td><%= item.url %></td>
-        <td><%= item.user %></td>
-        <td><%= item.thumbnail %></td>
-        <td><%= item.sales %></td>
-        <td><%= item.rating %></td>
-        <td><%= item.rating_decimal %></td>
-        <td><%= item.cost %></td>
-        <td><%= item.uploaded_on %></td>
-        <td><%= item.last_update %></td>
-        <td><%= item.tags %></td>
-        <td><%= item.category %></td>
-        <td><%= item.live_preview_url %></td>
-        <td><%= link_to 'Show', item %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="box">
+    <p>
+      <% @items.each do |item| %>
+        <a href=<%= link_to 'Show', item %>
+          <img src=<%= item.live_preview_url %> />
+        </a>
+      <% end %>
+    </p>
+</div>
 
-<br>
-
-<%= will_paginate @items %>
-
+<div>
+  <%= will_paginate @items %>
+</div>
