@@ -1,25 +1,20 @@
-<nav class="navbar navbar-static-top" role="navigation">
+<header class="header">
   <div class="container">
-    <div class="pull-right">
-      dunckr
+    <h2 class="nav pull-right">test</h2>
+    <div class="logo">
+      <%= image_tag("boot.png", :alt => "rss feed") %>
     </div>
-    <h3 class="text-muted">LessBoot</h3>
+    <h1 class="title">LESS BOOT</h1>
   </div>
-</nav>
-<!-- <header class="navbar navbar-static-top">
-  <div class="container">
-    <div class="pull-right">
-      dunckr
-    </div>
-    <h3 class="text-muted">LessBoot</h3>
-  </div>
-</header> -->
+</header>
 
-<div class="container-fluid">
-  <div id="masonry-container" class="transitions-enabled">
+<div class="container-fluid center-block">
+  <div class="row">
     <% @items.each do |item| %>
-      <div class="box">
-        <img src=<%= item.live_preview_url %> />
+      <div class="col-md-4">
+        <div class="box">
+          <img class="img-rounded" src=<%= item.live_preview_url %> />
+        </div>
       </div>
     <% end %>
   </div>
@@ -30,6 +25,8 @@
     <div class="footer center-block">
       <%= will_paginate @items %>
     </div>
+    <div class="pull-right">
+      dunckr
+      <a href="http://thenounproject.com/FabioMeroni/"></a>Image @ CC FabioMeroni</div>
   </div>
 </footer>
-
