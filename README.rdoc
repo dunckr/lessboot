@@ -1,28 +1,13 @@
-== README
+# [less boot](http://lessboot.herokuapp.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+find a new template for your next project quickly and easily.
 
-Things you may want to cover:
+[![compare templates](http://dunckr.com/images/lessboot.png "less boot")](http://lessboot.herokuapp.com)
 
-* Ruby version
+#### Seed DB
 
-* System dependencies
+`rake fetch`
 
-* Configuration
+## License
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+MIT © [Duncan Beaton](http://dunckr.com)
