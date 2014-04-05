@@ -1,21 +1,46 @@
 <header class="header">
   <div class="container">
-    <h2 class="nav pull-right">test</h2>
-    <div class="logo">
-      <%= image_tag("boot.png", :alt => "rss feed") %>
+    <div class="row">
+      <h1 class="col-md-3">
+        <a href="http://lessboot.herokuapp.com">
+          <div class="less">LESS</div>
+          <div class="boot">boot</div>
+        </a>
+      </h1>
+      <h4 class="col-md-5 tag">do something
+        <span class="tag-diff">different</span> in your next project</h4>
+      <div class="col-md-2 col-md-offset-1">
+        <a class="link pull-right" href="http://twitter.com/dunckr">
+          <h5>♥ by dunckr</h5>
+        </a>
+      </div>
     </div>
-    <h1 class="title">LESS BOOT</h1>
   </div>
 </header>
 
 <div class="container-fluid center-block">
   <div class="row">
     <% @items.each do |item| %>
-      <div class="col-md-4">
-        <div class="box">
-          <img class="img-rounded" src=<%= item.live_preview_url %> />
+      <a href=<%= "#{item.url}?ref=duncky" %> >
+        <div class="col-md-4">
+          <div class="box info">
+            <div class="row">
+              <div class="col-md-3">
+                <h4 class="rating">
+                  <%= item.rating_decimal %>
+                  <small>/5</small>
+                </h4>
+              </div>
+              <div class="col-md-6">
+                <h4 class="cost pull-right">
+                  <small>$</small>
+                  <%= item.cost %></h4>
+              </div>
+            </div>
+            <img class="img-rounded" src=<%= item.live_preview_url %> />
+          </div>
         </div>
-      </div>
+      </a>
     <% end %>
   </div>
 </div>
@@ -25,8 +50,5 @@
     <div class="footer center-block">
       <%= will_paginate @items %>
     </div>
-    <div class="pull-right">
-      dunckr
-      <a href="http://thenounproject.com/FabioMeroni/"></a>Image @ CC FabioMeroni</div>
   </div>
 </footer>

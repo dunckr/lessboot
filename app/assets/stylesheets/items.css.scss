@@ -20,11 +20,68 @@ footer {
   margin-bottom: 0;
 }
 
-.title {
-  font-family: 'Oswald', sans-serif;
-  color: white;
+.less {
+  display: inline;
+  font-family: 'PT Mono', sans-serif;
+  color: #E74C3C;
 }
 
-.logo img {
-  width: 10%;
+.boot {
+  display: inline;
+  color: #BDD4DE;
+}
+
+header h4 {
+  margin: 20px;
+}
+
+.info p {
+  font-family: 'Oswald', serif;
+}
+
+.rating {
+  color: #E74C3C;
+}
+
+.rating small {
+  color: #BDD4DE;
+}
+
+.cost {
+  color: #EFEFEF;
+}
+
+.cost small {
+  color: #BDD4DE;
+}
+
+.box {
+  background: #2B3A42;
+}
+
+.tag {
+  color: #BDD4DE;
+  padding: 10px;
+}
+
+.tag-diff {
+  font-family: 'PT Mono', sans-serif;
+  color: #EFEFEF;
+}
+
+.pagination li a {
+  background-color: transparent;
+  border: none;
+  font-family: 'PT Mono', sans-serif;
+  color: #BDD4DE;
+}
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  background-color: #EFEFEF;
+  border-color: #EFEFEF;
+}
+
+.link {
+  padding: 10px;
+  color: #BDD4DE;
+  font-family: 'Oswald', serif;
 }

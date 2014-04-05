@@ -1,3 +1,3 @@
 class Item < ActiveRecord::Base
-  self.per_page = 6
+  self.per_page = 18
 end
