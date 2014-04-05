@@ -48,5 +48,5 @@ def request(path)
 end
 
 def delete
-  ActiveRecord::Base.connection.execute('delete * from items')
+  # ActiveRecord::Base.connection.execute('delete * from items')
 end
